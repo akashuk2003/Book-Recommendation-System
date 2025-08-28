@@ -24,7 +24,7 @@ Live Site : https://book-recommendation-system-4fynnwul7-akashuk2003s-projects.v
 ## Setup & Installation
 
 ### Backend Setup (Django)
-
+Switch branch to `dev` for running locally(main uses production db and env variables)
 First, set up the Django server.
 
 1. Clone the repository
