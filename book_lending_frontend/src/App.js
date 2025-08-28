@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
       }
       return { success: false, message: data.detail || "Login failed." };
     } catch (error) {
-      return { success: false, message: "An error occurred." };
+      return { success: false, message: "Please check your login Credentials" };
     }
   };
 
