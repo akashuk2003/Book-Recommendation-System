@@ -109,4 +109,4 @@ API documentation is available via Swagger UI at:
 * **Postman Collection:** A `postman_collection.json` file is included in the root of the project with sample requests for all API endpoints.
 * **Deployment:** The application is deployed at Render for the backend and Vercel for the frontend.
 
-# notes # :books,authors,genres added from admin panel in local and supabase in production.
+note :books,authors,genres added from admin panel in local and supabase in production.
