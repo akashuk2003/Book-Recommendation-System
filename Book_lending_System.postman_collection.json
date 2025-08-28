@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "da57a77f-f9aa-452a-b189-975c3af5c191",
+		"name": "Book_lending_System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40302115",
+		"_collection_link": "https://team-a-3376.postman.co/workspace/DEVELOPER_UPSKILL~8b7e445f-6a12-4936-872f-3d766858494d/collection/40302115-da57a77f-f9aa-452a-b189-975c3af5c191?action=share&source=collection_link&creator=40302115"
+	},
+	"item": [
+		{
+			"name": "REGISTRATION/LOGIN",
+			"item": [
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "sample@123",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Akash",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "U K",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BOOKS",
+			"item": [
+				{
+					"name": "VIEW BOOKS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2MzYxOTAzLCJpYXQiOjE3NTYzNjE2MDMsImp0aSI6Ijc2YjlmZTdiNjVhMDQyYTZiNGQ0Mzc1ZGNjY2EwZDZlIiwidXNlcl9pZCI6IjEifQ.XE4KMaUvJ8c-q8TcQs0yOFGKBrj_PQj1OztXS3ekO_w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/books/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"books",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Aug 2025 07:51:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.8"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "648"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 5,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"author\": \"Dr APJ Abdul Kalam\",\n            \"genre\": \"Autobiography\",\n            \"title\": \"Wings of Fire\",\n            \"is_available\": false,\n            \"read_count\": 3\n        },\n        {\n            \"id\": 2,\n            \"author\": \"F. Scott Fitzgerald\",\n            \"genre\": \"Classic\",\n            \"title\": \"The Great Gatsby\",\n            \"is_available\": true,\n            \"read_count\": 0\n        },\n        {\n            \"id\": 3,\n            \"author\": \"J.R.R. Tolkien\",\n            \"genre\": \"High Fantasy\",\n            \"title\": \"The Lord of the Rings\",\n            \"is_available\": true,\n            \"read_count\": 1\n        },\n        {\n            \"id\": 4,\n            \"author\": \"J.K. Rowling\",\n            \"genre\": \"High Fantasy\",\n            \"title\": \"J.K. Rowling\",\n            \"is_available\": false,\n            \"read_count\": 1\n        },\n        {\n            \"id\": 5,\n            \"author\": \"J.R.R. Tolkien\",\n            \"genre\": \"High Fantasy\",\n            \"title\": \"The Hobbit\",\n            \"is_available\": true,\n            \"read_count\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "RATINGS",
+			"item": [
+				{
+					"name": "VIEW RATINGS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2MzY4MzU5LCJpYXQiOjE3NTYzNjY1NTksImp0aSI6IjFiYTU4MTE3MGFjYzQyZmFiMTJlOTc4NDhjZGZkNzI3IiwidXNlcl9pZCI6IjEifQ.THjnB-IWK4Go4ma2kUNtINF2XCGTZpK8FovWt_6Avl0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/1/reviews/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"1",
+								"reviews",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
