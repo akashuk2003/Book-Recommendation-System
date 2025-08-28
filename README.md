@@ -1,113 +1,112 @@
-### Book Lending & Recommendation System ###
+# Book Lending & Recommendation System
 
 The project is a full-stack application featuring a Django REST API backend and a React frontend. It provides a platform for users to browse, borrow, and return books, and receive personalized book recommendations based on their borrowing history.
 
-### Features ###
-User Authentication: Secure JWT-based user registration and login.
+Live Site : https://book-recommendation-system-4fynnwul7-akashuk2003s-projects.vercel.app/
 
-Book Browsing: List all books with filters for genre, author, and availability.
+## Features
 
-Lend & Return: Users can borrow available books and return them.
+* **User Authentication:** Secure JWT-based user registration and login.
+* **Book Browsing:** List all books with filters for genre, author, and availability.
+* **Lend & Return:** Users can borrow available books and return them.
+* **Personal Library:** Users can view a list of all the books they are currently borrowing.
+* **Recommendation Engine:** Recommends books based on the user's borrowing history (same genre). For new users, it suggests globally popular books (Top 5 Results).
+* **Book Reviews:** Users can add a 1-5 star rating and a comment for books.
+* **API Documentation:** API documentation available via Swagger API.
+* **Pagination:** All book lists are paginated for efficient data handling.
 
-Personal Library: Users can view a list of all the books they are currently borrowing.
+## Tech Stack
 
-Recommendation Engine: Recommends books based on the user's borrowing history (same genre). For new users, it suggests globally popular book(Top 5 Results).
+* **Backend:** Django, Django REST Framework, djangorestframework-simplejwt
+* **Frontend:** React.js, Tailwind CSS
+* **Database:** SQLite3 for development, PostgreSQL for Production
 
-Book Reviews: Users can add a 1-5 star rating and a comment for books.
+## Setup & Installation
 
-API Documentation: API documentation available via Swagger API.
+### Backend Setup (Django)
 
-Pagination: All book lists are paginated for efficient data handling.
-
-### Tech Stack ###
-Backend: Django, Django REST Framework, djangorestframework-simplejwt
-
-Frontend: React.js, Tailwind CSS
-
-Database: SQLite3 for development, PostgreSQL for Production
-
-### Setup & Installation ###
-
-1. Backend Setup (Django)
 First, set up the Django server.
 
-# 1. Clone the repository
-git clone <your-repo-url>
-cd <your-repo-folder>/backend # Navigate to the backend directory
+1. Clone the repository
 
-# 2. Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```bash
+   git clone <repo-url>
+   cd book_lending_system  # Navigate to the backend directory
+   ```
 
-# 3. Install the required packages
-pip install -r requirements.txt
+2. Create and activate a virtual environment
 
-# 4. Apply database migrations
-python manage.py migrate
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-# 5. Start the Django development server
-python manage.py runserver
+3. Install the required packages
 
-The backend API will now be running at http://127.0.0.1:8000.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-2. Frontend Setup (React)
+4. Apply database migrations
+
+   ```bash
+   python manage.py migrate
+   ```
+
+5. Start the Django development server
+
+   ```bash
+   python manage.py runserver
+   ```
+
+The backend API will now be running at `http://127.0.0.1:8000`.
+
+### Frontend Setup (React)
+
 In a separate terminal, set up the React client.
 
-# 1. Navigate to the frontend directory
-cd ../frontend
+1. Navigate to the frontend directory
 
-# 2. Install npm packages
-npm install
+   ```bash
+   cd book_lending_frontend
+   ```
 
-# 3. Start the React development server
-npm run dev
+2. Install npm packages
 
-The frontend application will now be running at http://localhost:3000
+   ```bash
+   npm install
+   ```
 
-## API Endpoints ##
-The  API endpoints are listed below. All protected routes require a Bearer <token> in the Authorization header.
+3. Start the React development server
 
-POST
-/api/register/
-Register a new user.
+   ```bash
+   npm run dev
+   ```
 
-POST
-/api/login/
-Obtain JWT access and refresh tokens.
+The frontend application will now be running at `http://localhost:3000`.
 
-GET
-/api/books/
-Get a paginated list of all books.
+## API Endpoints
 
-POST
-/api/books/<id>/borrow/
-Borrow a specific book.
+The API endpoints are listed below. All protected routes require a Bearer token in the Authorization header.
 
-POST
-/api/books/<id>/return/
-Return a borrowed book.
+* **POST** `/api/register/` → Register a new user.
+* **POST** `/api/login/` → Obtain JWT access and refresh tokens.
+* **GET** `/api/books/` → Get a paginated list of all books.
+* **POST** `/api/books/<id>/borrow/` → Borrow a specific book.
+* **POST** `/api/books/<id>/return/` → Return a borrowed book.
+* **GET** `/api/my-borrowed-books/` → List books currently borrowed by the user.
+* **GET** `/api/recommendations/` → Get book recommendations for the user.
+* **GET** `/api/books/<id>/reviews/` → Get all reviews for a specific book.
+* **POST** `/api/books/<id>/reviews/create/` → Add a new review for a book.
 
-GET
-/api/my-borrowed-books/
-List books currently borrowed by the user.
+## API Documentation
 
-GET
-/api/recommendations/
-Get book recommendations for the user.
+API documentation is available via Swagger UI at:
+`http://127.0.0.1:8000/api/schema/swagger-ui/`
 
-GET
-/api/books/<id>/reviews/
-Get all reviews for a specific book.
+## Submission Files
 
-POST
-/api/books/<id>/reviews/create/
-Add a new review for a book.
+* **Postman Collection:** A `postman_collection.json` file is included in the root of the project with sample requests for all API endpoints.
+* **Deployment:** The application is deployed at Render for the backend and Vercel for the frontend.
 
-## API Documentation ##
-API documentation via Swagger UI at:
-http://127.0.0.1:8000/api/schema/swagger-ui/
-
-Submission Files
-Postman Collection: A postman_collection.json file is included in the root of the project with sample requests for all API endpoints.
-
-Deployment: The application is deployed at Render for backend and Vercel for Frontend.
+# notes # :books,authors,genres added from admin panel in local and supabase in production.
